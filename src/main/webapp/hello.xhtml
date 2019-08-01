@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Hello, World!</title>
+</h:head>
+<h:body>
+    <p:outputLabel id="spring" value = "#{testJsfBean.msg}"/>
+    <h:form id="thatForm">
+        <p:outputLabel for="name" value="Enter your name" required="true" />
+        <p:inputText id="name" value="#{hello.name}" />
+        <p:message for="name" />
+        <br />
+        <p:commandButton value="Prime button" process="@form" action="#{hello.createMessage}" update="msg, spring"/>
+        <p:commandButton value="Create customer" process="@form" action="#{hello.createCustomer}" update="msg, spring"/>
+        <br />
+        <p:outputPanel id="msg">
+            <p:outputLabel value="#{hello.message}"/>
+            <p:outputLabel value="#{hello.customerName}"/>
+        </p:outputPanel>
+    </h:form>
+</h:body>
+</html>
