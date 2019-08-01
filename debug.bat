@@ -1,0 +1,1 @@
+java -Xss256K -Xmx128M -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005 -jar target\JSF.jar
